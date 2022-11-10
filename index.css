@@ -3,8 +3,9 @@ body {
     background-color: #333;
     color: whitesmoke;
     font-family: 'Times New Roman', Times, serif;
+  
   /*Css stil hentet fra: https://www.w3schools.com/howto/howto_js_rangeslider.asp */
-  }
+}
   .slidecontainer {
     width: 100%;
     
@@ -32,7 +33,7 @@ body {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #04AA6D;
+    background: #00FCF0;
     cursor: pointer;
   }
   
@@ -43,3 +44,38 @@ body {
     background: #04AA6D;
     cursor: pointer;
   }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  /*navigation bar css hentet fra: https://www.w3schools.com/css/css_navbar_horizontal.asp*/
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #00FCF0;
+  }
+  .active {
+    background-color: #00FCF0;
+  }
+  /* Add a gray right border to all list items, except the last item (last-child) */
+li {
+  border-right: 1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
