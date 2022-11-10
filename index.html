@@ -27,43 +27,43 @@
             <!--kode for slider er hentet fra: https://www.w3schools.com/howto/howto_js_rangeslider.asp-->
             <h3>Er du en morgen fugl eller en natt ugle?</h3>
             <div class="slidecontainer">
-                <input type="range" min="0" max="100" class="slider" id="earlyBirdNightOwl" step="any" />
+                <input type="range" min="0" max="100" value="50" class="slider" name="earlyBirdNightOwl" step="any" />
               </div><br>
               <h3>Jobbe alene eller jobbe sammen?</h3>
               <div class="slidecontainer">
-                <input type="range" min="0" max="100" value="50" class="slider" id="togetherAlone">
+                <input type="range" min="0" max="100" value="50" class="slider" name="togetherAlone">
               </div><br>
               <h3>fortell meg bakhistorien eller kom til poenget?</h3>
               <div class="slidecontainer">
-                <input type="range" min="0" max="100" value="50" class="slider" id="backstoryGetToThePoint">
+                <input type="range" min="0" max="100" value="50" class="slider" name="backstoryGetToThePoint">
               </div><br>
               <h3>Trenger å snakke om det eller gå videre til neste steg?</h3>
               <div class="slidecontainer">
-                <input type="range" min="0" max="100" value="50" class="slider" id="talkGetOnWithIt">
+                <input type="range" min="0" max="100" value="50" class="slider" name="talkGetOnWithIt">
               </div><br>
               <h3>Planlegge et møte eller gjøre det spontant når det trengs?</h3>
               <div class="slidecontainer">
-                <input type="range" min="0" max="100" value="50" class="slider" id="planSpontaneous">
+                <input type="range" min="0" max="100" value="50" class="slider" name="planSpontaneous">
               </div><br>
               <h3>Video chat eller discord meldinger?</h3>
               <div class="slidecontainer">
-                <input type="range" min="0" max="100" value="50" class="slider" id="videoChatDiscordMessages">
+                <input type="range" min="0" max="100" value="50" class="slider" name="videoChatDiscordMessages">
               </div><br>
               <h3>9 - 17 perioden eller jeg har ingen fast rutine?</h3>
               <div class="slidecontainer">
-                <input type="range" min="0" max="100" value="50" class="slider" id="nineToFiveNoRoutine">
+                <input type="range" min="0" max="100" value="50" class="slider" name="nineToFiveNoRoutine">
               </div><br>
               <h3>Jeg liker å jobbe hjemme eller skolen?</h3>
               <div class="slidecontainer">
-                <input type="range" min="0" max="100" value="50" class="slider" id="homeSchool">
+                <input type="range" min="0" max="100" value="50" class="slider" name="homeSchool">
               </div><br>
               <h3>kaffein eller ikke kaffein?</h3>
               <div class="slidecontainer">
-                <input type="range" min="0" max="100" value="50" class="slider" id="caffeinOrNot">
+                <input type="range" min="0" max="100" value="50" class="slider" name="caffeinOrNot">
               </div><br>
               <h3>trenger pause eller bli ferdig med det så fort som mulig?</h3>
               <div class="slidecontainer">
-                <input type="range" min="0" max="100" value="50" class="slider" id="breakGetItDone">
+                <input type="range" min="0" max="100" value="50" class="slider" name="breakGetItDone">
               </div><br>
               <input type="submit" id="button" value="Send" class="button">
             </form>
@@ -105,6 +105,7 @@ async function postData(url = "", data = {}) {
         event.preventDefault();
         const data = new FormData(event.target);
         const formJSON = Object.fromEntries(data.entries());
+
         const results = document.querySelector(".results pre");
         postData("https://bacit.info/", formJSON).then((data) => {
           results.innerText = JSON.stringify(data, null, 2);
