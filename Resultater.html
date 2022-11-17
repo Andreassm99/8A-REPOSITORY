@@ -9,5 +9,14 @@
 </head>
 <body>
  <p>canvas eller svg?</p>
+ <script>
+    fetch('https://bacit.info/hwr/20221117104707-dd78602bab32c3e9dab418d98a60895d.json')
+  .then((response) => response.json())
+  .then((data) => {
+
+    console.log(data.fname);
+  }); 
+  
+ </script>
 </body>
 </html>
