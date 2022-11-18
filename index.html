@@ -12,6 +12,8 @@
       <ul class="nav-menu">
         <li><a href="index.html">Spørreundersøkelse</a> </li>
         <li> <a href="Resultater.html">Resultater</a> </li>
+        <li> <a href="https://andreassm99.github.io/">Flaggoppgave</a></li>
+
     </ul>
         <h1><b>Felles-skapet</b></h1>
         <p>Denne spørre undersøkelsen har som formål og vite hvilke rutiner du i prosjektgruppa foretrekker!</p>
@@ -27,7 +29,7 @@
             <!--kode for slider er hentet fra: https://www.w3schools.com/howto/howto_js_rangeslider.asp-->
             <h3>Er du en morgen fugl eller en natt ugle?</h3>
             <div class="slidecontainer">
-                <input type="range" min="0" max="100" value="50" class="slider" name="earlyBirdNightOwl" step="any" />
+                <input type="range" min="0" max="100" class="slider" name="earlyBirdNightOwl" step="any" />
               </div><br>
               <h3>Jobbe alene eller jobbe sammen?</h3>
               <div class="slidecontainer">
@@ -105,7 +107,6 @@ async function postData(url = "", data = {}) {
         event.preventDefault();
         const data = new FormData(event.target);
         const formJSON = Object.fromEntries(data.entries());
-
         const results = document.querySelector(".results pre");
         postData("https://bacit.info/", formJSON).then((data) => {
           results.innerText = JSON.stringify(data, null, 2);
@@ -114,7 +115,7 @@ async function postData(url = "", data = {}) {
       const form = document.querySelector("form");
       form.addEventListener("submit", formData);
       
-      fetch("https://bacit.info/")
+      /*fetch("https://bacit.info/")
   .then((response) => {
     if (!response.ok) {
       throw new Error('Network response was not OK');
@@ -122,11 +123,10 @@ async function postData(url = "", data = {}) {
     return response.blob();
   })
   .then((myBlob) => {
-    myImage.src = URL.createObjectURL(myBlob);
   })
   .catch((error) => {
     console.error('There has been a problem with your fetch operation:', error);
-  });
+  }); */
         </script>
     
     </html>
