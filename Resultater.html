@@ -20,27 +20,206 @@
         <div>
             <!--Data fra spørreundersøkelse fremstillt ved bruk av canvas-API-->
             <!--Kilde: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API-->
-            <canvas id="cnv" class="canvas" width="1000" height="500"></canvas>
+            <canvas id="canvas" class="canvas" width="1000" height="500"></canvas>
         </div> 
     </Main>
     <div>
-        
-
  <script>
 // Kode for "Fetch api" hentet fra: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+
+//Max
+fetch('https://bacit.info/hwr/20221206083407-76ae1064b3f994c9403f3f516b2098ec.json')//Json fil med Andreas sin data
+.then(function (resp){
+return resp.json();
+})
+.then (function (result){
+console.log(result);
+//text og posisjonering, samt stil
+context.font = '14px serif';
+            context.fillStyle = 'orange';
+            context.fillStyle = 'white';
+            context.fillText('Morgenfugl', 30, 50);
+            context.fillText('Jobbe med det', 30, 100);
+            context.fillText('sammen', 30, 115);
+            context.fillText('Fortell meg', 30, 150);
+            context.fillText('bakhistorien', 30, 170);
+            context.fillText('Snakke om det', 30, 200);
+            context.fillText('Planlegge', 30, 250);
+            context.fillText('Videochat', 30, 300);
+            context.fillText('09-17', 30, 350);
+            context.fillText('Hjemme', 30, 400);
+            context.fillText('Kaffein', 30, 450);
+            context.fillText('Trenger pause', 30, 490);
 
 
+            context.fillText('Nattugle', 570, 50);
+            context.fillText('Jobbe med det', 570, 100);
+            context.fillText('Alene', 570, 115);
+            context.fillText('Kom til poenget', 570, 150);
+            context.fillText('Gå videre til', 570, 200);
+            context.fillText('neste steg', 570, 215)
+            context.fillText('Gjøre det spontant', 570, 250);
+            context.fillText('når det trengs', 570, 265);
+            context.fillText('Discord meldingerr', 570, 300);
+            context.fillText('Jeg har ingen', 570, 350);
+            context.fillText('fast rutine', 570, 365);
+            context.fillText('Skolen', 570, 400);
+            context.fillText('Ikke kaffein', 570, 450);
+            context.fillText('Ferdig så fort ', 570, 500);
+            context.fillText('som mulig', 570, 515);
 
+            context.beginPath(); //strek
+            context.moveTo(140,50);
+            context.lineTo(540,50);
 
-//Andreas
-//fetch('https://bacit.info/hwr/20221117104707-dd78602bab32c3e9dab418d98a60895d.json')//Json fil med Andreas sin data
-//.then((response) => response.json())
-//.then((data) => {
+            context.moveTo(140,100);
+            context.lineTo(540,100);
 
-    //console.log(data.fname);
- // }); 
- // */
+            context.moveTo(140,150);
+            context.lineTo(540,150);
+
+            context.moveTo(140,200);
+            context.lineTo(540,200);
+
+            context.moveTo(140,250);
+            context.lineTo(540,250);
+
+            context.moveTo(140,300);
+            context.lineTo(540,300);
+
+            context.moveTo(140,350);
+            context.lineTo(540,350);
+
+            context.moveTo(140,400);
+            context.lineTo(540,400);
+
+            context.moveTo(140,450);
+            context.lineTo(540,450);
+
+            context.moveTo(140,500);
+            context.lineTo(540,500);
+
+            context.moveTo(140,550);
+            context.lineTo(540,550);
+
+            context.stroke();
+
+            var X = 70 + 4*parseInt(result.earlyBirdNightOwl, 10);
+            var Y = 50;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "orange";
+            context.fill();
+            context.lineWidth = 2;
+            context.strokeStyle = "black";
+            context.stroke();
+            context.closePath();
+
+            var X = 140+ 4*parseInt(result.togetherAlone, 10);
+            var Y = 100;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "orange";
+            context.fill();
+            context.lineWidth = 1;
+            context.strokeStyle = "black";
+            context.stroke();
+
+            var X = 140+ 4*parseInt(result.backstoryGetToThePoint, 10);
+            var Y = 150;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "orange";
+            context.fill();
+            context.lineWidth = 1;
+            context.strokeStyle = "black";
+            context.stroke();
+
+            var X = 140+ 4*parseInt(result.talkGetOnWithIt, 10);
+            var Y = 200;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "orange";
+            context.fill();
+            context.lineWidth = 1;
+            context.strokeStyle = "black";
+            context.stroke();
+
+            var X = 140+ 4*parseInt(result.planSpontaneous, 10);
+            var Y = 250;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "orange";
+            context.fill();
+            context.lineWidth = 1;
+            context.strokeStyle = "black";
+            context.stroke();
+
+            var X = 140+ 4*parseInt(result.videoChatDiscordMessages, 10);
+            var Y = 300;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "orange";
+            context.fill();
+            context.lineWidth = 1;
+            context.strokeStyle = "black";
+            context.stroke();
+
+            var X = 140+ 4*parseInt(result.nineToFiveNoRoutine, 10);
+            var Y = 350;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "orange";
+            context.fill();
+            context.lineWidth = 1;
+            context.strokeStyle = "black";
+            context.stroke();
+
+            var X = 140+ 4*parseInt(result.homeSchool, 10);
+            var Y = 400;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "Orange";
+            context.fill();
+            context.lineWidth = 1;
+            context.strokeStyle = "black";
+            context.stroke();
+
+            var X = 140+ 4*parseInt(result.caffeinOrNot, 10);
+            var Y = 450;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "orange";
+            context.fill();
+            context.lineWidth = 1;
+            context.strokeStyle = "black";
+            context.stroke();
+
+            var X = 140+ 4*parseInt(result.breakGetItDone, 10);
+            var Y = 500;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "orange";
+            context.fill();
+            context.lineWidth = 1;
+            context.strokeStyle = "black";
+            context.stroke();
+
+           
+        });
  </script>
 </body>
 </html>
