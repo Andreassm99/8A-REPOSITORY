@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felles-skapet</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+      <ul class="nav-menu">
+        <li><a href="index.html">Hjem</a> </li>
+        <li> <a href="Resultater.html">Resultater</a> </li>
+        <li> <a href="Spørreundersøkelse.html">Spørreundersøkelse</a> </li>
+        <li> <a href="https://andreassm99.github.io/">Flaggoppgave</a></li>
+
+    </ul>
+        <h1><b>Felles-skapet</b></h1>
+        <p>Denne spørre undersøkelsen har som formål og vite hvilke rutiner du i prosjektgruppa foretrekker!</p>
+    </header>
+    <main>
+        <form method="POST">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname"><br>
+            <label for="Mail">Mail:</label><br>
+            <input type="text" id="Mail" name="Mail"><br>
+            <!--kode for slider er hentet fra: https://www.w3schools.com/howto/howto_js_rangeslider.asp-->
+            <h3>Er du en morgen fugl eller en natt ugle?</h3>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="50"class="slider" name="earlyBirdNightOwl" step="any" />
+              </div><br>
+              <h3>Jobbe alene eller jobbe sammen?</h3>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="50" class="slider" name="togetherAlone">
+              </div><br>
+              <h3>fortell meg bakhistorien eller kom til poenget?</h3>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="50" class="slider" name="backstoryGetToThePoint">
+              </div><br>
+              <h3>Trenger å snakke om det eller gå videre til neste steg?</h3>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="50" class="slider" name="talkGetOnWithIt">
+              </div><br>
+              <h3>Planlegge et møte eller gjøre det spontant når det trengs?</h3>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="50" class="slider" name="planSpontaneous">
+              </div><br>
+              <h3>Video chat eller discord meldinger?</h3>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="50" class="slider" name="videoChatDiscordMessages">
+              </div><br>
+              <h3>9 - 17 perioden eller jeg har ingen fast rutine?</h3>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="50" class="slider" name="nineToFiveNoRoutine">
+              </div><br>
+              <h3>Jeg liker å jobbe hjemme eller skolen?</h3>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="50" class="slider" name="homeSchool">
+              </div><br>
+              <h3>kaffein eller ikke kaffein?</h3>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="50" class="slider" name="caffeinOrNot">
+              </div><br>
+              <h3>trenger pause eller bli ferdig med det så fort som mulig?</h3>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="50" class="slider" name="breakGetItDone">
+              </div><br>
+              <input type="submit" id="button" value="Send" class="button">
+            </form>
+            <!--Preview av json code-->
+            <div id="Form"; class="results">
+                <h2>Form Data (JSON)</h2>
+                <pre></pre>
+            </div>
+        
+            </main>
+            
+            <footer>
+                <h2>tusen takk for svaret ditt!</h2>
+            </footer>
+            </body>
+       
+       <script>
+    // Post Method using Fetch API hentet fra https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch:
+    // Example POST method implementation using fetch:
+async function postData(url = "", data = {}) {
+        // Default options are marked with *
+        const response = await fetch(url, {
+          method: "POST", // *GET, POST, PUT, DELETE, etc.
+          mode: "cors", // no-cors, *cors, same-origin
+          cache: "no-cache", // *default, no-cache, reload, force-cache,only-if-cached
+          credentials: "same-origin", // include, *same-origin, omit
+          headers: {
+            "Content-Type": "application/json",
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          redirect: "follow", // manual, *follow, error
+          referrerPolicy: "no-referrer", // no-referrer,*no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+          body: JSON.stringify(data), // body data type must match"Content-Type"header
+        });
+        return response.json(); // parses JSON response into native JavaScriptobjects
+      }
+
+      function formData(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        const formJSON = Object.fromEntries(data.entries());
+        const results = document.querySelector(".results pre");
+        postData("https://bacit.info/", formJSON).then((data) => {
+          results.innerText = JSON.stringify(data, null, 2);
+        });
+      }
+      const form = document.querySelector("form");
+      form.addEventListener("submit", formData);
+      
+      /*fetch("https://bacit.info/")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Network response was not OK');
+    }
+    return response.blob();
+  })
+  .then((myBlob) => {
+  })
+  .catch((error) => {
+    console.error('There has been a problem with your fetch operation:', error);
+  }); */
+        </script>
+    
+    </html>
