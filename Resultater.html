@@ -10,7 +10,7 @@
 <body>
     <header>
         <ul class="nav-menu">
-            <li><a href="index.html">Hjem</a> </li>
+            <li><a href="index.html">Hjem</a> </li> <!--- endret fra index.html-->
             <li> <a href="Resultater.html">Resultater</a> </li>
             <li> <a href="Spørreundersøkelse.html">Spørreundersøkelse</a> </li>
             <li> <a href="https://andreassm99.github.io/">Flaggoppgave</a></li>
@@ -20,7 +20,7 @@
         <div>
             <!--Data fra spørreundersøkelse fremstillt ved bruk av canvas-API-->
             <!--Kilde: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API-->
-            <canvas id="canvas" class="canvas" width="1000" height="500"></canvas>
+            <canvas id="canvas" width="700" height="550"></canvas>
         </div> 
     </Main>
     <div>
@@ -52,7 +52,7 @@ context.font = '14px serif';
             context.fillText('09-17', 30, 350);
             context.fillText('Hjemme', 30, 400);
             context.fillText('Kaffein', 30, 450);
-            context.fillText('Trenger pause', 30, 490);
+            context.fillText('Trenger pause', 30, 500);
 
 
             context.fillText('Nattugle', 570, 50);
@@ -63,12 +63,12 @@ context.font = '14px serif';
             context.fillText('neste steg', 570, 215)
             context.fillText('Gjøre det spontant', 570, 250);
             context.fillText('når det trengs', 570, 265);
-            context.fillText('Discord meldingerr', 570, 300);
+            context.fillText('Discord meldinger', 570, 300);
             context.fillText('Jeg har ingen', 570, 350);
             context.fillText('fast rutine', 570, 365);
             context.fillText('Skolen', 570, 400);
             context.fillText('Ikke kaffein', 570, 450);
-            context.fillText('Ferdig så fort ', 570, 500);
+            context.fillText('Ferdig så fort', 570, 500);
             context.fillText('som mulig', 570, 515);
 
             context.beginPath(); //strek
@@ -102,12 +102,12 @@ context.font = '14px serif';
             context.moveTo(140,500);
             context.lineTo(540,500);
 
-            context.moveTo(140,550);
-            context.lineTo(540,550);
+            // context.moveTo(140,550); XXXXXXXXXXXXXXXXX EKSTRA LINJE? XXXXXXXXXXXXXXXXXXXXX
+            // context.lineTo(540,550);
 
             context.stroke();
 
-            var X = 70 + 4*parseInt(result.earlyBirdNightOwl, 10);
+            var X = 140 + 4*parseInt(result.earlyBirdNightOwl, 10);
             var Y = 50;
             var R = 5;
             context.beginPath();
@@ -207,16 +207,16 @@ context.font = '14px serif';
             context.strokeStyle = "black";
             context.stroke();
 
-            var X = 140+ 4*parseInt(result.breakGetItDone, 10);
-            var Y = 500;
-            var R = 5;
-            context.beginPath();
-            context.arc(X, Y, R, 0, 2*Math.PI, false);
-            context.fillStyle = "orange";
-            context.fill();
-            context.lineWidth = 1;
-            context.strokeStyle = "black";
-            context.stroke();
+            // var X = 140+ 4*parseInt(result.breakGetItDone, 10); XXXXXXXXXXXXXXXXXXXXXXXXXXXXX TROR DENNE ER OVERFLØDIG XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+            // var Y = 500;
+            // var R = 5;
+            // context.beginPath();
+            // context.arc(X, Y, R, 0, 2*Math.PI, false);
+            // context.fillStyle = "orange";
+            // context.fill();
+            // context.lineWidth = 1;
+            // context.strokeStyle = "black";
+            // context.stroke();
 
            
         });

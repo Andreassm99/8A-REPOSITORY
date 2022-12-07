@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: #333;
+    background-color:#333;
     color: whitesmoke;
     font-family: 'Times New Roman', Times, serif;
   
@@ -46,14 +46,20 @@ body {
   }
   ul {
     list-style-type: none;
-    margin: 0;
+    margin: 100;
     padding: 0;
     overflow: hidden;
     background-color: #333;
   }
+
+  .nav-menu { /* Olai la  til denne for å teste XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
   /*navigation bar css hentet fra: https://www.w3schools.com/css/css_navbar_horizontal.asp*/
   li {
-    float: right;
+    display: inline-block; /* Olai endret dette for test */
   }
   
   li a {
@@ -84,6 +90,7 @@ li:last-child {
   max-width: 300px;
   margin: auto;
   text-align: center;
+  display: inline-block /* Olai la til denne for å teste */
 }
 
 .title {
@@ -116,4 +123,9 @@ button:hover, a:hover {
 /* Add rounded corners to the top left and the top right corner of the image */
 img {
   border-radius: 5px 5px 0 0;
+}
+#canvas {
+  position: relative;
+  border: 50%;
+  background-color: rgb(36, 36, 36);  /* HER MÅ DET FIKSES XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 }
