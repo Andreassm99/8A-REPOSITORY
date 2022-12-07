@@ -52,14 +52,14 @@ body {
     background-color: #333;
   }
 
-  .nav-menu { /* Olai la  til denne for å teste XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+  .nav-menu {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
   }
   /*navigation bar css hentet fra: https://www.w3schools.com/css/css_navbar_horizontal.asp*/
   li {
-    display: inline-block; /* Olai endret dette for test */
+    display: inline-block;
   }
   
   li a {
@@ -90,7 +90,7 @@ li:last-child {
   max-width: 300px;
   margin: auto;
   text-align: center;
-  display: inline-block /* Olai la til denne for å teste */
+  display: inline-block 
 }
 
 .title {
@@ -127,5 +127,5 @@ img {
 #canvas {
   position: relative;
   border: 50%;
-  background-color: rgb(36, 36, 36);  /* HER MÅ DET FIKSES XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+  background-color: rgb(36, 36, 36);
 }
