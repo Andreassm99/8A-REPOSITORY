@@ -32,10 +32,12 @@ var context = canvas.getContext('2d');
 
 //Max
 fetch('https://bacit.info/hwr/20221206083407-76ae1064b3f994c9403f3f516b2098ec.json')//Json fil med Andreas sin data
+// fetch('https://bacit.info/hwr/20221208172028-54619d10b673c9475b1dd44c651bcdc6.json') //Json fil med Olai sin data
 .then(function (resp){
 return resp.json();
 })
-.then (function (result){
+.then (function (result){ 
+   
 console.log(result);
 //text og posisjonering i resultatside, samt stil
 context.font = '14px serif';
@@ -71,7 +73,7 @@ context.font = '14px serif';
             context.fillText('Ferdig så fort', 570, 500);
             context.fillText('som mulig', 570, 515);
 
-            context.beginPath(); //strek
+            context.beginPath(); //streker
             context.moveTo(140,50);
             context.lineTo(540,50);
 
