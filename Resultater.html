@@ -31,7 +31,7 @@ var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
 //Max
-fetch('https://bacit.info/hwr/20221206083407-76ae1064b3f994c9403f3f516b2098ec.json')//Json fil med Andreas sin data
+fetch('https://bacit.info/hwr/20221208171241-cc70bcb017ff46c86323a19b67b269da.json')//Json fil med Max sin data
 .then(function (resp){
 return resp.json();
 })
@@ -51,7 +51,7 @@ context.font = '14px serif';
             context.fillText('Videochat', 30, 300);
             context.fillText('09-17', 30, 350);
             context.fillText('Hjemme', 30, 400);
-            context.fillText('Kaffein', 30, 450);
+            context.fillText('Møte sjeldent', 30, 450);
             context.fillText('Trenger pause', 30, 500);
 
 
@@ -67,7 +67,7 @@ context.font = '14px serif';
             context.fillText('Jeg har ingen', 570, 350);
             context.fillText('fast rutine', 570, 365);
             context.fillText('Skolen', 570, 400);
-            context.fillText('Ikke kaffein', 570, 450);
+            context.fillText('Møte ofte', 570, 450);
             context.fillText('Ferdig så fort', 570, 500);
             context.fillText('som mulig', 570, 515);
 
@@ -198,7 +198,7 @@ context.font = '14px serif';
             context.strokeStyle = "black";
             context.stroke();
 
-            var X = 140+ 4*parseInt(result.caffeinOrNot, 10);
+            var X = 140+ 4*parseInt(result.sjeldentEllerOfte, 10);
             var Y = 450;
             var R = 5;
             context.beginPath();
@@ -223,6 +223,129 @@ context.font = '14px serif';
 
            
         });
+        //Andreas
+fetch('https://bacit.info/hwr/20221208171821-2b4fd67854ff1db6c04f35fcf4f26add.json')//Json fil med Max sin data
+.then(function (resp){
+return resp.json();
+})
+.then (function (result){
+console.log(result);
+context.stroke();
+
+var X = 140 + 4*parseInt(result.earlyBirdNightOwl, 10);
+var Y = 50;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "green";
+context.fill();
+context.lineWidth = 2;
+context.strokeStyle = "black";
+context.stroke();
+context.closePath();
+
+var X = 140+ 4*parseInt(result.togetherAlone, 10);
+var Y = 100;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "green";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.backstoryGetToThePoint, 10);
+var Y = 150;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "green";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.talkGetOnWithIt, 10);
+var Y = 200;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "green";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.planSpontaneous, 10);
+var Y = 250;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "green";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.videoChatDiscordMessages, 10);
+var Y = 300;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "green";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.nineToFiveNoRoutine, 10);
+var Y = 350;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "green";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.homeSchool, 10);
+var Y = 400;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "green";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.sjeldentEllerOfte, 10);
+var Y = 450;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "green";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+
+var X = 140+ 4*parseInt(result.breakGetItDone, 10); 
+var Y = 500;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "green";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+
+});
  </script>
 </body>
 </html>
