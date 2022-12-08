@@ -346,6 +346,130 @@ context.stroke();
 
 
 });
+
+ //Sebastian
+ fetch('https://bacit.info/hwr/20221208175134-af54b635283bb46350b32704362a6d91.json')//Json fil med Max sin data
+.then(function (resp){
+return resp.json();
+})
+.then (function (result){
+console.log(result);
+context.stroke();
+
+var X = 140 + 4*parseInt(result.earlyBirdNightOwl, 10);
+var Y = 50;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "blue";
+context.fill();
+context.lineWidth = 2;
+context.strokeStyle = "black";
+context.stroke();
+context.closePath();
+
+var X = 140+ 4*parseInt(result.togetherAlone, 10);
+var Y = 100;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "blue";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.backstoryGetToThePoint, 10);
+var Y = 150;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "blue";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.talkGetOnWithIt, 10);
+var Y = 200;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "blue";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.planSpontaneous, 10);
+var Y = 250;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "blue";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.videoChatDiscordMessages, 10);
+var Y = 300;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "blue";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.nineToFiveNoRoutine, 10);
+var Y = 350;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "blue";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.homeSchool, 10);
+var Y = 400;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "blue";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+var X = 140+ 4*parseInt(result.sjeldentEllerOfte, 10);
+var Y = 450;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "blue";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+
+var X = 140+ 4*parseInt(result.breakGetItDone, 10); 
+var Y = 500;
+var R = 5;
+context.beginPath();
+context.arc(X, Y, R, 0, 2*Math.PI, false);
+context.fillStyle = "blue";
+context.fill();
+context.lineWidth = 1;
+context.strokeStyle = "black";
+context.stroke();
+
+
+});
  </script>
 </body>
 </html>
