@@ -11,8 +11,8 @@
     <header>
         <ul class="nav-menu">
             <li><a href="index.html">Hjem</a> </li>
-            <li> <a href="Resultater.html">Resultater</a> </li>
             <li> <a href="Spørreundersøkelse.html">Spørreundersøkelse</a> </li>
+            <li> <a href="Resultater.html">Resultater</a> </li>
             <li> <a href="https://andreassm99.github.io/">Flaggoppgave</a></li>
         </ul>
     </header>
@@ -20,7 +20,7 @@
         <div>
             <!--Data fra spørreundersøkelse fremstillt ved bruk av canvas-API-->
             <!--Kilde: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API-->
-            <canvas id="canvas" width="700" height="550"></canvas>
+            <canvas id="canvas" width="900" height="550"></canvas>
         </div> 
     </Main>
     <div>
@@ -39,7 +39,6 @@ return resp.json();
 console.log(result);
 //text og posisjonering i resultatside, samt stil
 context.font = '14px serif';
-            context.fillStyle = 'orange';
             context.fillStyle = 'white';
             context.fillText('Morgenfugl', 30, 50);
             context.fillText('Jobbe med det', 30, 100);
@@ -70,6 +69,8 @@ context.font = '14px serif';
             context.fillText('Møte ofte', 570, 450);
             context.fillText('Ferdig så fort', 570, 500);
             context.fillText('som mulig', 570, 515);
+
+
 
             context.beginPath(); //strek
             context.moveTo(140,50);
@@ -104,6 +105,21 @@ context.font = '14px serif';
 
 
             context.stroke(); //lager alle linjer kodet ovenfor
+
+            context.fillStyle = 'white'; //legger til brukerens navn og farge i Canvas
+            context.fillText(result.fname, 800, 50);
+            context.fillText(result.lname, 830, 50);
+            var X = 780;
+            var Y = 45;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "orange";
+            context.fill();
+            context.lineWidth = 2;
+            context.strokeStyle = "black";
+            context.stroke();
+            context.closePath();
 
             var X = 140 + 4*parseInt(result.earlyBirdNightOwl, 10); //legger til brukerens punkter på linjer i Canvas-elementet
             var Y = 50;
@@ -227,6 +243,21 @@ return resp.json();
 .then (function (result){
 console.log(result);
 context.stroke();
+
+context.fillStyle = 'white'; //legger til brukerens navn og farge i Canvas
+            context.fillText(result.fname, 800, 80);
+            context.fillText(result.lname, 800, 95);
+            var X = 780;
+            var Y = 80;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "green";
+            context.fill();
+            context.lineWidth = 2;
+            context.strokeStyle = "black";
+            context.stroke();
+            context.closePath();
 
 var X = 140 + 4*parseInt(result.earlyBirdNightOwl, 10);
 var Y = 50;
@@ -352,6 +383,21 @@ return resp.json();
 console.log(result);
 context.stroke();
 
+context.fillStyle = 'white'; //legger til brukerens navn og farge i Canvas
+            context.fillText(result.fname, 800, 115);
+            context.fillText(result.lname, 800, 130);
+            var X = 780;
+            var Y = 120;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "blue";
+            context.fill();
+            context.lineWidth = 2;
+            context.strokeStyle = "black";
+            context.stroke();
+            context.closePath();
+
 var X = 140 + 4*parseInt(result.earlyBirdNightOwl, 10);
 var Y = 50;
 var R = 5;
@@ -475,6 +521,21 @@ return resp.json();
    
 console.log(result);
 context.stroke();
+
+context.fillStyle = 'white'; //legger til brukerens navn og farge i Canvas
+            context.fillText(result.fname, 800, 150);
+            context.fillText(result.lname, 800, 165);
+            var X = 780;
+            var Y = 155;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "purple";
+            context.fill();
+            context.lineWidth = 2;
+            context.strokeStyle = "black";
+            context.stroke();
+            context.closePath();
 
             var X = 140 + 4*parseInt(result.earlyBirdNightOwl, 10);
             var Y = 50;
@@ -600,6 +661,21 @@ console.log(result);
 
 context.stroke();
 
+context.fillStyle = 'white'; //legger til brukerens navn og farge i Canvas
+            context.fillText(result.fname, 800, 185);
+            context.fillText(result.lname, 800, 200);
+            var X = 780;
+            var Y = 190;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "white";
+            context.fill();
+            context.lineWidth = 2;
+            context.strokeStyle = "black";
+            context.stroke();
+            context.closePath();
+
 var X = 140 + 4*parseInt(result.earlyBirdNightOwl, 10);
 var Y = 50;
 var R = 5;
@@ -721,6 +797,21 @@ return resp.json();
 console.log(result); 
 
 context.stroke();
+
+context.fillStyle = 'white'; //legger til brukerens navn og farge i Canvas
+            context.fillText(result.fname, 800, 220);
+            context.fillText(result.lname, 800, 235);
+            var X = 780;
+            var Y = 223;
+            var R = 5;
+            context.beginPath();
+            context.arc(X, Y, R, 0, 2*Math.PI, false);
+            context.fillStyle = "yellow";
+            context.fill();
+            context.lineWidth = 2;
+            context.strokeStyle = "black";
+            context.stroke();
+            context.closePath();
 
 var X = 140 + 4*parseInt(result.earlyBirdNightOwl, 10);
 var Y = 50;
