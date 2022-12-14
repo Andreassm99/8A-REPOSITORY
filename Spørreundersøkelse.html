@@ -28,45 +28,65 @@
             <label for="Mail">Mail:</label><br>
             <input type="text" id="Mail" name="Mail"><br>
             <!--kode for slider er hentet fra: https://www.w3schools.com/howto/howto_js_rangeslider.asp-->
-            <h3>Er du en morgen fugl eller en natt ugle?</h3>
+            <h3>Er du en morgenfugl eller en natt ugle?</h3>
             <div class="slidecontainer">
-                <input type="range" min="0" max="100" value="50"class="slider" id="earlyBirdNigtOwl" name="earlyBirdNightOwl" step="any" />
+                <label for="earlyBirdNightOwl">Morgenfugl</label>
+                <input type="range" min="0" max="100" value="50"class="slider" id="earlyBirdNigtOwl" name="earlyBirdNightOwl" step="any"/>
+                <label for="earlyBirdNightOwl">Nattugle</label>
               </div><br>
               <h3>Jobbe alene eller jobbe sammen?</h3>
               <div class="slidecontainer">
+                <label for="togetherAlone">Jobbe alene</label>
                 <input type="range" min="0" max="100" value="50" class="slider" name="togetherAlone">
+                <label for="togetherAlone">Jobbe sammen</label>
               </div><br>
               <h3>Fortell meg bakhistorien eller kom til poenget?</h3>
               <div class="slidecontainer">
+                <label for="backstoryGetToThePoint">Fortell meg bakhistorien</label>
                 <input type="range" min="0" max="100" value="50" class="slider" name="backstoryGetToThePoint">
+                <label for="backstoryGetToThePoint">Kom til poenget</label>
               </div><br>
               <h3>Trenger å snakke om det eller gå videre til neste steg?</h3>
               <div class="slidecontainer">
+                <label for="talkGetOnWithIt">Trenger å snakke om det</label>
                 <input type="range" min="0" max="100" value="50" class="slider" name="talkGetOnWithIt">
+                <label for="talkGetOnWithIt">Gå videre til neste steg</label>
               </div><br>
               <h3>Planlegge møte eller gjøre det spontant når det trengs?</h3>
               <div class="slidecontainer">
+                <label for="planSpontaneous">Planlegge møte</label>
                 <input type="range" min="0" max="100" value="50" class="slider" name="planSpontaneous">
+                <label for="planSpontaneous">Spontant når det trengs</label>
               </div><br>
               <h3>Video chat eller discord meldinger?</h3>
               <div class="slidecontainer">
+                <label for="videoChatDiscordMessages">Video chat</label>
                 <input type="range" min="0" max="100" value="50" class="slider" name="videoChatDiscordMessages">
+                <label for="videoChatDiscordMessages">Discord</label>
               </div><br>
               <h3>9 - 17 perioden eller jeg har ingen fast rutine?</h3>
               <div class="slidecontainer">
+                <label for="nineToFiveNoRoutine">9-17 perioden</label>
                 <input type="range" min="0" max="100" value="50" class="slider" name="nineToFiveNoRoutine">
+                <label for="nineToFiveNoRoutine">Ingen fast rutine</label>
               </div><br>
               <h3>Jobbe hjemme eller på skolen?</h3>
               <div class="slidecontainer">
+                <label for="homeSchool">Hjemme</label>
                 <input type="range" min="0" max="100" value="50" class="slider" name="homeSchool">
+                <label for="homeSchool">Skolen</label>
               </div><br>
               <h3>Møte sjeldent eller ofte?</h3>
               <div class="slidecontainer">
+                <label for="sjeldentEllerOfte">Sjeldent</label>
                 <input type="range" min="0" max="100" value="50" class="slider" name="sjeldentEllerOfte">
+                <label for="sjeldentEllerOfte">Ofte</label>
               </div><br>
               <h3>Trenger pause eller bli ferdig med det så fort som mulig?</h3>
               <div class="slidecontainer">
+                <label for="breakGetItDone">Trenger pause</label>
                 <input type="range" min="0" max="100" value="50" class="slider" name="breakGetItDone">
+                <label for="breakGetItDone">Fort ferdig</label>
               </div><br>
               <input type="submit" id="button" value="Send" class="button">
             </form>
