@@ -9,18 +9,18 @@
 </head>
 <body>
     <header>
-      <ul class="nav-menu">
-        <li><a href="index.html">Hjem</a> </li>
-        <li> <a href="Spørreundersøkelse.html">Spørreundersøkelse</a> </li>
-        <li> <a href="Resultater.html">Resultater</a> </li>
-        <li> <a href="https://andreassm99.github.io/">Flaggoppgave</a></li>
+      <ul class="nav-menu"> <!-- Navigasjonsmeny for å bytte mellom dokumentene-->
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="Spørreundersøkelse.html">Spørreundersøkelse</a></li>
+        <li><a href="Resultater.html">Resultater</a></li>
+        <li><a href="https://andreassm99.github.io/">Flaggoppgave</a></li>
 
     </ul>
         <h1><b>Felles-skapet</b></h1>
         <p>Denne spørre undersøkelsen har som formål å vite hvilke rutiner du i prosjektgruppa foretrekker!</p>
     </header>
     <main>
-        <form method="POST" class="form">
+        <form method="POST" class="form"> <!-- Skjema som samler brukerdata for å sende til ekstern server, både input som tekst og range slidere med nummer-verdier -->
             <label for="fname">First name:</label><br>
             <input type="text" id="fname" name="fname"><br>
             <label for="lname">Last name:</label><br>
@@ -28,11 +28,11 @@
             <label for="Mail">Mail:</label><br>
             <input type="text" id="Mail" name="Mail"><br>
             <!--kode for slider er hentet fra: https://www.w3schools.com/howto/howto_js_rangeslider.asp-->
-            <h3>Er du en morgenfugl eller en natt ugle?</h3>
+            <h3>Er du en morgenfugl eller en nattugle?</h3>
             <div class="slidecontainer">
-                <label for="earlyBirdNightOwl">Morgenfugl</label>
+                <label for="earlyBirdNightOwl" class="merke">Morgenfugl</label>
                 <input type="range" min="0" max="100" value="50"class="slider" id="earlyBirdNigtOwl" name="earlyBirdNightOwl" step="any"/>
-                <label for="earlyBirdNightOwl">Nattugle</label>
+                <label for="earlyBirdNightOwl" class="merke">Nattugle</label>
               </div><br>
               <h3>Jobbe alene eller jobbe sammen?</h3>
               <div class="slidecontainer">
@@ -88,9 +88,9 @@
                 <input type="range" min="0" max="100" value="50" class="slider" name="breakGetItDone">
                 <label for="breakGetItDone">Fort ferdig</label>
               </div><br>
-              <input type="submit" id="button" value="Send" class="button">
+              <input type="submit" id="button" value="Send" class="button"> <!--- knapp for å starte handlingen som sender infoen fra skjemaet ovenfor til ekstern server-->
             </form>
-            <!--Preview av json code-->
+            <!--Preview av json code, brukes i dette tilfellet til å hente TRXID og TIME-stamp for å hente ut riktig info fra ekstern server -->
             <div id="Form"; class="results">
                 <h2>Form Data (JSON)</h2>
                 <pre></pre>
@@ -136,7 +136,7 @@ async function postData(url = "", data = {}) {
       const form = document.querySelector("form");
       form.addEventListener("submit", formData);
       
-      /*fetch("https://bacit.info/")
+      fetch("https://bacit.info/") //funksjon for å teste/ sjekke om JSON-dataen plukkes opp eller ei
   .then((response) => {
     if (!response.ok) {
       throw new Error('Network response was not OK');
@@ -147,7 +147,7 @@ async function postData(url = "", data = {}) {
   })
   .catch((error) => {
     console.error('There has been a problem with your fetch operation:', error);
-  }); */
+  }); 
         </script>
     
     </html>
