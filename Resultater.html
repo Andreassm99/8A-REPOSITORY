@@ -30,14 +30,8 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
-//Max
-fetch('https://bacit.info/hwr/20221208171241-cc70bcb017ff46c86323a19b67b269da.json')//Json fil med Max sin data
-.then(function (resp){
-return resp.json();
-})
-.then (function (result){
-console.log(result);
-//text og posisjonering i resultatside, samt stil
+
+//tekst og dens posisjonering i resultatside
 context.font = '14px serif';
             context.fillStyle = 'white';
             context.fillText('Morgenfugl', 30, 50);
@@ -72,7 +66,7 @@ context.font = '14px serif';
 
 
 
-            context.beginPath(); //strek
+            context.beginPath(); //streker for å vise verdiene de forskjellige brukere legger inn ved range sliders i Spørreskjemaet
             context.moveTo(140,50);
             context.lineTo(540,50);
 
@@ -103,25 +97,33 @@ context.font = '14px serif';
             context.moveTo(140,500);
             context.lineTo(540,500);
 
+            context.stroke(); //tegner linjene spesifisert over
 
-            context.stroke(); //lager alle linjer kodet ovenfor
+            //Max
+        fetch('https://bacit.info/hwr/20221208171241-cc70bcb017ff46c86323a19b67b269da.json')//Json fil med Max sin data
+        .then(function (resp){
+        return resp.json(); 
+        })
+        .then (function (result){
+        console.log(result);
 
-            context.fillStyle = 'white'; //legger til brukerens navn og farge i Canvas
-            context.fillText(result.fname, 800, 50);
-            context.fillText(result.lname, 830, 50);
-            var X = 780;
+
+            context.fillStyle = 'white'; //legger til brukerens navn i resultats-Canvas (her Max Lee)
+            context.fillText(result.fname, 800, 50); //fornavn
+            context.fillText(result.lname, 830, 50); //etternavn
+            var X = 780; // X, Y = koordinater for punkt
             var Y = 45;
-            var R = 5;
-            context.beginPath();
+            var R = 5; // R = radius for punkt
+            context.beginPath(); //legger til brukerens identifiserings-punkt med individuell farge i resultats-Canvas (her Max Lee)
             context.arc(X, Y, R, 0, 2*Math.PI, false);
-            context.fillStyle = "orange";
-            context.fill();
-            context.lineWidth = 2;
-            context.strokeStyle = "black";
-            context.stroke();
-            context.closePath();
+            context.fillStyle = "orange"; //fyll-farge for punkt
+            context.fill(); // fyller punktet med gitt farge
+            context.lineWidth = 2; //tykkelse for "linje" for punkt
+            context.strokeStyle = "black"; // farge for omriss til punkt
+            context.stroke(); //tegner punkt
+            context.closePath(); // "lukker" tegning av gitte "blokker"
 
-            var X = 140 + 4*parseInt(result.earlyBirdNightOwl, 10); //legger til brukerens punkter på linjer i Canvas-elementet
+            var X = 140 + 4*parseInt(result.earlyBirdNightOwl, 10); //legger til brukerens verdi-punkter på linjer i Canvas-elementet
             var Y = 50;
             var R = 5;
             context.beginPath();
@@ -133,7 +135,7 @@ context.font = '14px serif';
             context.stroke();
             context.closePath();
 
-            var X = 140+ 4*parseInt(result.togetherAlone, 10); 
+            var X = 140+ 4*parseInt(result.togetherAlone, 10); //legger til brukerens verdi-punkter på linjer i Canvas-elementet
             var Y = 100;
             var R = 5;
             context.beginPath();
@@ -144,7 +146,7 @@ context.font = '14px serif';
             context.strokeStyle = "black";
             context.stroke();
 
-            var X = 140+ 4*parseInt(result.backstoryGetToThePoint, 10);
+            var X = 140+ 4*parseInt(result.backstoryGetToThePoint, 10);//legger til brukerens verdi-punkter på linjer i Canvas-elementet
             var Y = 150;
             var R = 5;
             context.beginPath();
@@ -155,7 +157,7 @@ context.font = '14px serif';
             context.strokeStyle = "black";
             context.stroke();
 
-            var X = 140+ 4*parseInt(result.talkGetOnWithIt, 10);
+            var X = 140+ 4*parseInt(result.talkGetOnWithIt, 10); //legger til brukerens verdi-punkter på linjer i Canvas-elementet
             var Y = 200;
             var R = 5;
             context.beginPath();
@@ -166,7 +168,7 @@ context.font = '14px serif';
             context.strokeStyle = "black";
             context.stroke();
 
-            var X = 140+ 4*parseInt(result.planSpontaneous, 10);
+            var X = 140+ 4*parseInt(result.planSpontaneous, 10); //legger til brukerens verdi-punkter på linjer i Canvas-elementet
             var Y = 250;
             var R = 5;
             context.beginPath();
@@ -177,7 +179,7 @@ context.font = '14px serif';
             context.strokeStyle = "black";
             context.stroke();
 
-            var X = 140+ 4*parseInt(result.videoChatDiscordMessages, 10);
+            var X = 140+ 4*parseInt(result.videoChatDiscordMessages, 10); //legger til brukerens verdi-punkter på linjer i Canvas-elementet
             var Y = 300;
             var R = 5;
             context.beginPath();
@@ -188,7 +190,7 @@ context.font = '14px serif';
             context.strokeStyle = "black";
             context.stroke();
 
-            var X = 140+ 4*parseInt(result.nineToFiveNoRoutine, 10);
+            var X = 140+ 4*parseInt(result.nineToFiveNoRoutine, 10); //legger til brukerens verdi-punkter på linjer i Canvas-elementet
             var Y = 350;
             var R = 5;
             context.beginPath();
@@ -199,7 +201,7 @@ context.font = '14px serif';
             context.strokeStyle = "black";
             context.stroke();
 
-            var X = 140+ 4*parseInt(result.homeSchool, 10);
+            var X = 140+ 4*parseInt(result.homeSchool, 10); //legger til brukerens verdi-punkter på linjer i Canvas-elementet
             var Y = 400;
             var R = 5;
             context.beginPath();
@@ -210,7 +212,7 @@ context.font = '14px serif';
             context.strokeStyle = "black";
             context.stroke();
 
-            var X = 140+ 4*parseInt(result.sjeldentEllerOfte, 10);
+            var X = 140+ 4*parseInt(result.sjeldentEllerOfte, 10); //legger til brukerens verdi-punkter på linjer i Canvas-elementet
             var Y = 450;
             var R = 5;
             context.beginPath();
@@ -222,7 +224,7 @@ context.font = '14px serif';
             context.stroke();
 
 
-            var X = 140+ 4*parseInt(result.breakGetItDone, 10); 
+            var X = 140+ 4*parseInt(result.breakGetItDone, 10); //legger til brukerens verdi-punkter på linjer i Canvas-elementet
             var Y = 500;
             var R = 5;
             context.beginPath();
@@ -235,8 +237,11 @@ context.font = '14px serif';
 
            
         });
+
+
+    //Nytt segment med kode som henter JSON-data fra ekstern server, og poster det i Canvas-elementet. likt som segmentet over, det samme gjelder segmentene under
         //Andreas
-fetch('https://bacit.info/hwr/20221208171821-2b4fd67854ff1db6c04f35fcf4f26add.json')//Json fil med Andreas sin data
+fetch('https://bacit.info/hwr/20221208171821-2b4fd67854ff1db6c04f35fcf4f26add.json')// henter Json fil med Andreas sin data
 .then(function (resp){
 return resp.json();
 })
@@ -245,7 +250,7 @@ console.log(result);
 context.stroke();
 
 context.fillStyle = 'white'; //legger til brukerens navn og farge i Canvas
-            context.fillText(result.fname, 800, 80);
+            context.fillText(result.fname, 800, 80); 
             context.fillText(result.lname, 800, 95);
             var X = 780;
             var Y = 80;
