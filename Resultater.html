@@ -25,15 +25,14 @@
     </Main>
     <div>
  <script>
-// Kode for "Fetch api" hentet fra: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
 
 //tekst og dens posisjonering i resultatside
-context.font = '14px serif';
-            context.fillStyle = 'white';
+context.font = '14px serif'; //font
+            context.fillStyle = 'white'; //farge
+            //nedenfor har vi lagt inn de forskjellige svarene fra spørre undersøkelsen
             context.fillText('Morgenfugl', 30, 50);
             context.fillText('Jobbe med det', 30, 100);
             context.fillText('sammen', 30, 115);
@@ -100,13 +99,15 @@ context.font = '14px serif';
             context.stroke(); //tegner linjene spesifisert over
 
             //Max
+           // Kode for "Fetch api" hentet fra: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
         fetch('https://bacit.info/hwr/20221208171241-cc70bcb017ff46c86323a19b67b269da.json')//Json fil med Max sin data
-        .then(function (resp){
-        return resp.json(); 
+        .then(function (resp){ //definerer funksjon
+        return resp.json();  //returner svaret i json format
         })
-        .then (function (result){
-        console.log(result);
+        .then (function (result){ 
+        console.log(result); //log resultat
 
+        //Kilde: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
 
             context.fillStyle = 'white'; //legger til brukerens navn i resultats-Canvas (her Max Lee)
             context.fillText(result.fname, 800, 50); //fornavn
